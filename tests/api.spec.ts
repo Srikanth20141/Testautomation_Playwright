@@ -1,7 +1,12 @@
-import {test,} from '@playwright/test';
+import { expect, test, } from '@playwright/test';
 
-test('Post request',async({request})=>{
-    const postResponds = await request.get('https://gorest.co.in/public/v2/posts',);
-    const body = await postResponds.json();
+test('Get request', async ({ request }) => {
+    const responds = await request.get('https://gorest.co.in/public/v2/posts',);
+    const body = await responds.json();
+
     console.log(body);
+    /* status have ok */
+    expect(responds.ok).toBeTruthy();
+    /* verify the status code */ 
+    expect(responds.status()).toBe(200);
 })
