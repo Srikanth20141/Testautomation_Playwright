@@ -1,5 +1,6 @@
 import { expect, test, } from '@playwright/test';
 import { request } from 'http';
+import { faker } from '@faker-js/faker';
 
 test('Get request', async ({ request }) => {
     const responds = await request.get('https://gorest.co.in/public/v2/posts',);
@@ -13,9 +14,9 @@ test('Get request', async ({ request }) => {
 });
 
 
-test.skip('Create user', async ({ request }) => {
-    let name = "Srikant";
-    let email = 'srikanth@gg.com';
+test('Create user', async ({ request }) => {
+    let name = faker.person.firstName();
+    let email = faker.internet.email();
     const token = '898d6dc2d36c9c062ea4fa564f019b450c4f24825e3d8c9551d25d0ff5ca7a47';
     const responds = await request.post('https://gorest.co.in/public/v2/users', {
         data:
