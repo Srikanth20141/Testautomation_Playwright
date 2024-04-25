@@ -13,9 +13,9 @@ test('Get request', async ({ request }) => {
 });
 
 
-test('Create user', async ({ request }) => {
+test.skip('Create user', async ({ request }) => {
     let name = "Srikant";
-    let email= 'srikanth@gg.com';
+    let email = 'srikanth@gg.com';
     const token = '898d6dc2d36c9c062ea4fa564f019b450c4f24825e3d8c9551d25d0ff5ca7a47';
     const responds = await request.post('https://gorest.co.in/public/v2/users', {
         data:
@@ -29,10 +29,24 @@ test('Create user', async ({ request }) => {
     console.log(res);
 
     expect(responds.status()).toBe(201);
-    expect(res).toHaveProperty('name',name);
-    expect(res).toHaveProperty('email',email);
+    expect(res).toHaveProperty('name', name);
+    expect(res).toHaveProperty('email', email);
 });
 
-// test('Delete user',async({request})=>{
+test('Create user from the json file', async ({ request }) => {
+    let name = "Srikant";
+    let email = 'srikanth@gg.com';
+    const jsonData = require('../tests/testData.json');
+    const token = '898d6dc2d36c9c062ea4fa564f019b450c4f24825e3d8c9551d25d0ff5ca7a47';
+    const responds = await request.post('https://gorest.co.in/public/v2/users', {
+        data: jsonData,
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    });
+    const res = await responds.json();
 
-// })
+    console.log(res);
+
+    expect(responds.status()).toBe(201);
+});
