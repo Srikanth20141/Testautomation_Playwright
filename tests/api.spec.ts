@@ -1,4 +1,5 @@
 import { expect, test, } from '@playwright/test';
+import { request } from 'http';
 
 test('Get request', async ({ request }) => {
     const responds = await request.get('https://gorest.co.in/public/v2/posts',);
@@ -13,10 +14,12 @@ test('Get request', async ({ request }) => {
 
 
 test('Create user', async ({ request }) => {
-    const token = '898d6dc2d36c9c062ea4fa564f019b450c4f24825e3d8c9551d25d0ff5ca7a47'
+    let name = "Srikant";
+    let email= 'srikanth@gg.com';
+    const token = '898d6dc2d36c9c062ea4fa564f019b450c4f24825e3d8c9551d25d0ff5ca7a47';
     const responds = await request.post('https://gorest.co.in/public/v2/users', {
         data:
-            { "name": "srikanth", "gender": "male", "email": "sathinathan@gmail.com", "status": "active", },
+            { "name": name, "gender": "male", "email": email, "status": "active", },
         headers: {
             'Authorization': `Bearer ${token}`
         }
@@ -26,4 +29,10 @@ test('Create user', async ({ request }) => {
     console.log(res);
 
     expect(responds.status()).toBe(201);
-})
+    expect(res).toHaveProperty('name',name);
+    expect(res).toHaveProperty('email',email);
+});
+
+// test('Delete user',async({request})=>{
+
+// })
