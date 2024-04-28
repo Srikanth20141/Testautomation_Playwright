@@ -1,7 +1,0 @@
-{
-  id: 6877982,
-  name: 'Clifton',
-  email: 'Devante_Witting@hotmail.com',
-  gender: 'male',
-  status: 'active'
-}

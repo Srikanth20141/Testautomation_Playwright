@@ -1,7 +1,0 @@
-{
-  id: 6877979,
-  name: 'Emmett',
-  email: 'Bianka.Klocko@gmail.com',
-  gender: 'male',
-  status: 'active'
-}

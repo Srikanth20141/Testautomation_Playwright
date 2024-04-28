@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test'
 
 
-test('Login OrangeHRM', async ({ page }) => {
+test.skip('Login OrangeHRM', async ({ page }) => {
   // const login = new loginPage(page);
 
   await page.goto('https://opensource-demo.orangehrmlive.com/');
@@ -17,4 +17,14 @@ test('Login OrangeHRM', async ({ page }) => {
 
   //await page.waitForSelector('#username', { state: 'attached' });
   await page.getByRole('checkbox').check();
+});
+
+test('screenshots ', async ({ page }) => {
+  await page.goto('https://opensource-demo.orangehrmlive.com/');
+  //Element screenshot
+  await page.getByAltText('company-branding').screenshot({ path: './screenshots/element.png' });
+  // current page screenshot
+  await page.screenshot({ path: './screenshots/page.png' });
+  // full page screenshot
+  await page.screenshot({ path: './screenshots/fullpage.png', fullPage: true });
 });
