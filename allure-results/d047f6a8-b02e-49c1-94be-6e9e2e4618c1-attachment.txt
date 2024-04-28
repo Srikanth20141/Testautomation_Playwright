@@ -1,0 +1,15 @@
+{
+  id: 6877165,
+  name: 'Krystal',
+  email: 'Major89@yahoo.com',
+  gender: 'male',
+  status: 'active'
+}
+------------------------------
+{
+  id: 6877165,
+  name: 'Krystal',
+  email: 'Major89@yahoo.com',
+  gender: 'male',
+  status: 'active'
+}

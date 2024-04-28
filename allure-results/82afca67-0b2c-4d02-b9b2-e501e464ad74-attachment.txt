@@ -1,0 +1,15 @@
+{
+  id: 6877988,
+  name: 'Darren',
+  email: 'Duncan_Mueller45@hotmail.com',
+  gender: 'male',
+  status: 'active'
+}
+------------------------------
+{
+  id: 6877988,
+  name: 'Darren',
+  email: 'Duncan_Mueller45@hotmail.com',
+  gender: 'male',
+  status: 'active'
+}

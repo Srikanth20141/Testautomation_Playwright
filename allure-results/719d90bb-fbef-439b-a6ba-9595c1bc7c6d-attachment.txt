@@ -1,0 +1,7 @@
+{
+  id: 6878913,
+  name: 'Alfred',
+  email: 'Sharon_Hintz38@yahoo.com',
+  gender: 'male',
+  status: 'active'
+}

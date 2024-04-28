@@ -1,0 +1,15 @@
+{
+  id: 6877980,
+  name: 'Arvel',
+  email: 'Maya_Towne62@gmail.com',
+  gender: 'male',
+  status: 'active'
+}
+------------------------------
+{
+  id: 6877980,
+  name: 'Arvel',
+  email: 'Maya_Towne62@gmail.com',
+  gender: 'male',
+  status: 'active'
+}

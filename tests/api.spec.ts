@@ -60,6 +60,7 @@ test('get a specific user', async ({ request }) => {
         }
     });
     const body = await getReq.json();
+    console.log('------------------------------');
     console.log(body);
 });
 
